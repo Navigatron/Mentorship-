@@ -4,17 +4,11 @@
 
 ## How do I use this?
 
-*Github pages is not yet enabled, this is the current best strategy.*
-
-1. Clone the repo and head to index.html
-
-As (if) we move to git flow, the master branch should contain the most stable version.
+[We're on Github Pages!](https://navigatron.github.io/Submachine)
 
 ## Contribution Guide
 
-> "plz dont commit random crap to master"
-
-1. Clone dev
+1. Clone This Repo
 2. Make a feature branch
 3. Make a **small** improvement.
     - This allows us to consider small changes, so one small error doesn't block a large amount of good stuff.
