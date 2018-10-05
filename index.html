@@ -1,50 +1,73 @@
-
-
 <!DOCTYPE html>
-<html>
-   <head>
-      <meta charset="utf-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <title>List of Grievances</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" type="text/css" media="screen" href="css/styles.css"/>
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      <script src="js/grievances.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-app.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-database.js"></script>
-      <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
-   </head>
-   <body class="bg">
-      <!--Navbar-->
-      <nav class="navbar sticky-top">
-         <a class="navbar-brand nav-logo">logo</a>
-         <ul class="nav nav-loc">
-            <li class="nav-item"><a class="nav-link n1 navbar-hover">somethin</a></li>
-            <li class="nav-item"><a class="nav-link n2 navbar-hover">View someting</a></li>
-            <li class="nav-item"><a class="nav-link n3 navbar-hover">View Random Somethihng</a></li>
-            </a>    
-         </ul>
-      </nav>
-      <!--Content Pane-->
-      <div class="content-pane container-fluid bg" id="form-wrapper">
-         <form class="form-box">
-            <div class="form-group">
-               <label for="formGroupExampleInput">
-                  <h2 class="f-title">Title</h2>
-                  <h2 class="f-subtitle ">ADD A DESCRIPTION </h2>
-               </label>
-               <input type="text" class="form-control form-control-lg"" id="formTitle" placeholder="Example input">
-            </div>
-            <input type="button" name="next" class="next submit-button" id="submitButton" value="Next" />
-         </form>
-      </div>
-   </body>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Submachine</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./css/master.css">
+    </head>
+    <body>
+        <!-- Body is screen width - content area shouldn't be full width on large screens. -->
+        <main>
+            <!-- Name of the Site -->
+            <h1>
+                Submachine
+            </h1>
+            <!-- Tagline: Super Quick Description -->
+            <p id="tagline">
+                Attacking Substitution Ciphers with Letter Frequency Analysis
+            </p>
+            <!-- Paragraph describing Usage -->
+            <p>
+                Paste your ciphertext in the input box below. Using a reference for
+                normal letter frequencies, we'll calculate the most likely substitution
+                for each letter in your ciphertext. The resulting cleartext will appear below.
+            </p>
+            <p>
+                If we mess up, use the alphabet select to adjust which letters are
+                used as substitutes. We'll list the options orderd by which is most
+                likely to be correct.
+            </p>
+            <!--
+            Cipher Text Input:
+                Whenever there's a change here, update the cleartext.
+            -->
+            <h2>
+                CipherText:
+            </h2>
+            <textarea id="ciphertext"></textarea>
+            <!--
+            Reference Text Select:
+                Select which reference text to use for letter frequency analysis.
+                Whenever changed, re-analyze.
+            -->
+            <h2>
+                Letter Frequency Reference:
+            </h2>
+            <select id="reference">
+                <!-- http://pi.math.cornell.edu/~mec/2003-2004/cryptography/subs/frequencies.html -->
+                <option value="def">Cornell 40k word sample</option>
+            </select>
+            <!--
+            Alphabet Select:
+                There will be multiple possible alphabets to use when deciphering.
+                OnChange, re-analyze.
+                I still believe this should be on a letter-by-letter basis.
+            -->
+            <h2>
+                Alphabet Adjustment:
+            </h2>
+            <select id="alphabet">
+                <option value="def">This feature not yet implemented.</option>
+            </select>
+            <!--
+            Cleartext:
+                OnAnalyze, this shows the translated cleartext.
+            -->
+            <h2>
+                ClearText:
+            </h2>
+            <textarea id="cleartext" disabled="true"></textarea>
+        </main>
+    </body>
 </html>
-
